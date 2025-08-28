@@ -1,75 +1,26 @@
-# Nuxt Minimal Starter
+# Infinite Loading Demo (Nuxt 3 + Vue 3)
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a simple demo project showing how to implement **infinite scrolling / lazy loading** in a Nuxt 3 app using Vue 3's `ref`, `onMounted`, and the **Intersection Observer API**.
+
+## Features
+- Fetches paginated products from a server endpoint (`/api/products`).
+- Automatically loads more items when the user scrolls to the bottom.
+- Shows loading indicator while fetching.
+- Stops loading when all products are displayed.
+
+## Tech Stack
+- [Nuxt 3](https://nuxt.com/)
+- [Vue 3](https://vuejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+## How It Works
+1. The app starts by fetching the first batch of products from `/api/products`.
+2. An `IntersectionObserver` watches a target element at the bottom of the list.
+3. When the target becomes visible, the next batch of products is loaded.
+4. Continues until all products are fetched.
 
 ## Setup
-
-Make sure to install dependencies:
-
+Clone the repo and install dependencies:
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
 bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+bun dev
